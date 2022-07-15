@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MVCClient.Models.Bank>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AccNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccHolderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccHolderName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+</div>
+<div class="text-center">
+    <br />
+    <hr />
+    <br />
+    <p>Choose Your option</p>
+    <br />
+
+    @Html.ActionLink("Get Account Details", "Details", "Bank") <br />
+    @Html.ActionLink("Make Transaction", "AddTrans", "Transaction") <br />
+    @Html.ActionLink("Mini-Statement", "Details", "Transaction") <br />
+
+</div>

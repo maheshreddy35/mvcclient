@@ -1,0 +1,49 @@
+﻿@model MVCClient.Models.Transactions
+
+@{
+    ViewData["Title"] = "AddTrans";
+}
+
+<h1>AddTrans</h1>
+
+<h4>Transactions</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddTrans">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TransDate" class="control-label"></label>
+                <input asp-for="TransDate" class="form-control" />
+                <span asp-validation-for="TransDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amt" class="control-label"></label>
+                <input asp-for="Amt" class="form-control" />
+                <span asp-validation-for="Amt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccNo" class="control-label"></label>
+                <input asp-for="AccNo" class="form-control" />
+                <span asp-validation-for="AccNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransType" class="control-label"></label>
+                <input asp-for="TransType" class="form-control" />
+                <span asp-validation-for="TransType" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Login">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

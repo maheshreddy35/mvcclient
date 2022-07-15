@@ -1,0 +1,65 @@
+﻿@model IEnumerable<MVCClient.Models.Transactions>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TransId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Balance)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "UpdateTrans", new {  id=item.TransId }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
